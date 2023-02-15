@@ -12,6 +12,7 @@ import Urun from "./Urun"
 import Tahsilat from "./Tahsilat"
 import Odeme from "./Odeme"
 import Login from "./Login"
+import Logout from "./Logout"
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Tahsilat" element={<Tahsilat />} />
           <Route path="/Odeme" element={<Odeme />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Logout" element={<Logout />} />
         </Routes>
     </BrowserRouter>
   )

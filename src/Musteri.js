@@ -3,13 +3,23 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import {Link, useNavigate} from "react-router-dom"
 
 
 function Musteri() {
+
   const[allCustomers, setAllCustomers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => { //sayfa açılır açılmaz çalışır bu kodlar
   
+     //musteriye kontrolsüz bir şekilde geçişi engellemek için
+       if (!localStorage.getItem("userName"))
+       {
+          navigate('/Login', { replace: true });
+       }
+    
+
     const getAllCustomerInfo = async () => {
         let response = await axios.get(
             'https://private-d0072-aycanursenakorkmaz.apiary-mock.com/musteri'

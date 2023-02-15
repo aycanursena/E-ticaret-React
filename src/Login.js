@@ -1,14 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-
 import {Link} from "react-router-dom"
-
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate
+} from "react-router-dom";
 
 
 function Login() {
+
+  const navigate = useNavigate();
 
   const[name, setName] = useState(); 
   const[password, setPassword] = useState(); 
@@ -32,17 +37,22 @@ function Login() {
 
      if (response.data.result=="success") {
         setResult("Giriş Başarılı");
+        localStorage.setItem("userName", name)
+        navigate('/Musteri', { replace: true });
 
     } else {
           setResult("Hatalı kullanıcı adı veya şifre");
+          // alert("başarısız");
     }
-    console.log("Resp:" + result );
-    alert(response.data.result);
+
+    console.log(result);
+    // console.log("Resp:" + result );
+    // alert(response.data.result);
 
 
-    // if (response.data.result=="success") {
+    // if (response.data.result=="success") { //musteriye kontrolsüz bir şekilde geçişi engellemek için
     // localStorage.setItem("userName", "onurkulabas")
-    // navigate('/secret-page', { replace: true });
+    // navigate('/Urun', { replace: true });
     // } else {
     // setResult('Hatalı Kullanıcı Adı veya Şifre');
     // }
@@ -50,7 +60,7 @@ function Login() {
 }
 
   return (
-     //yorumsdsddf
+
       <>
   {/* BEGIN BODY */}
   {/* BEGIN SIDEBAR TOGGLER BUTTON */}
