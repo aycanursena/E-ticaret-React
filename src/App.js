@@ -13,6 +13,10 @@ import Tahsilat from "./Tahsilat"
 import Odeme from "./Odeme"
 import Login from "./Login"
 import Logout from "./Logout"
+import SiparisDurumu from "./SiparisDurumu"
+import Sehir from "./Sehir"
+import TahsilatTipi from "./TahsilatTipi"
+import UrunKategorisi from "./UrunKategorisi";
 
 
 function App() {
@@ -27,6 +31,10 @@ function App() {
           <Route path="/Odeme" element={<Odeme />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Logout" element={<Logout />} />
+          <Route path="/SiparisDurumu" element={<SiparisDurumu />} />
+          <Route path="/Sehir" element={<Sehir />} />
+          <Route path="/TahsilatTipi" element={<TahsilatTipi />} />
+          <Route path="/UrunKategorisi" element={<UrunKategorisi />} />
         </Routes>
     </BrowserRouter>
   )

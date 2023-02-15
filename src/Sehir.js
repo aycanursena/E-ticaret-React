@@ -6,9 +6,9 @@ import Footer from "./Components/Footer";
 import {Link, useNavigate} from "react-router-dom"
 
 
-function SiparisDurumu() {
+function Sehir() {
 
-  const[allOrderStatus, setAllOrderStatus] = useState([]);
+  const[allCity, setAllCity] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => { //sayfa açılır açılmaz çalışır bu kodlar
@@ -20,19 +20,19 @@ function SiparisDurumu() {
        }
     
 
-    const getAllOrderStatusInfo = async () => {
+    const getAllCityInfo = async () => {
         let response = await axios.get(
-            'https://private-d0072-aycanursenakorkmaz.apiary-mock.com/SiparisDurumu'
+            'https://private-d0072-aycanursenakorkmaz.apiary-mock.com/Sehir'
             );
     
-            console.log("getAllUserInfo" + response.data.SiparisDurumuListesi);
+            console.log("getAllUserInfo" + response.data.SehirListesi);
 
-            setAllOrderStatus(response.data.SiparisDurumuListesi);
+            setAllCity(response.data.SehirListesi);
 
     }
 
     // call the function
-    getAllOrderStatusInfo().catch(console.error);
+    getAllCityInfo().catch(console.error);
  
   }, [])
 
@@ -50,7 +50,7 @@ function SiparisDurumu() {
         {/* BEGIN PAGE TITLE */}
         <div className="page-title">
           <h1>
-            Siparis Durumu <small>Liste</small>
+            Şehir <small>Liste</small>
           </h1>
         </div>
         {/* END PAGE TITLE */}
@@ -302,7 +302,7 @@ function SiparisDurumu() {
             <i className="fa fa-circle" />
           </li>
           <li>
-            <a href="#">Sipariş Durumu</a>
+            <a href="#">Şehir</a>
             <i className="fa fa-circle" />
           </li>
           <li>
@@ -337,16 +337,16 @@ function SiparisDurumu() {
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>Sipariş Durumu</th>
+                        <th>Ad</th>
                       </tr>
                     </thead>
                     <tbody>
                       {
-                      allOrderStatus.map( (data) => (  //foreach gibi, data yerin index'te yazabilirsin
+                      allCity.map( (data) => (  //foreach gibi, data yerin index'te yazabilirsin
                       <> 
                         <tr>
-                         <td>{data.SiparisDurumuId}</td>
-                         <td>{data.SiparisDurumu}</td>
+                         <td>{data.SehirId}</td>
+                         <td>{data.Ad}</td>
                         </tr>
                          </>
                          )
@@ -375,4 +375,4 @@ function SiparisDurumu() {
   );
 }
 
-export default SiparisDurumu;
+export default Sehir;

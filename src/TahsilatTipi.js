@@ -6,9 +6,9 @@ import Footer from "./Components/Footer";
 import {Link, useNavigate} from "react-router-dom"
 
 
-function SiparisDurumu() {
+function TahsilatTipi() {
 
-  const[allOrderStatus, setAllOrderStatus] = useState([]);
+  const[allCollectionType, setAllCollectionType] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => { //sayfa açılır açılmaz çalışır bu kodlar
@@ -20,19 +20,19 @@ function SiparisDurumu() {
        }
     
 
-    const getAllOrderStatusInfo = async () => {
+    const getAllCollectionTypeInfo = async () => {
         let response = await axios.get(
-            'https://private-d0072-aycanursenakorkmaz.apiary-mock.com/SiparisDurumu'
+            'https://private-d0072-aycanursenakorkmaz.apiary-mock.com/TahsilatTipi'
             );
     
-            console.log("getAllUserInfo" + response.data.SiparisDurumuListesi);
+            console.log("getAllUserInfo" + response.data.TahsilatTipiListesi);
 
-            setAllOrderStatus(response.data.SiparisDurumuListesi);
+            setAllCollectionType(response.data.TahsilatTipiListesi);
 
     }
 
     // call the function
-    getAllOrderStatusInfo().catch(console.error);
+    getAllCollectionTypeInfo().catch(console.error);
  
   }, [])
 
@@ -50,7 +50,7 @@ function SiparisDurumu() {
         {/* BEGIN PAGE TITLE */}
         <div className="page-title">
           <h1>
-            Siparis Durumu <small>Liste</small>
+            Tahsilat Tipi <small>Liste</small>
           </h1>
         </div>
         {/* END PAGE TITLE */}
@@ -302,7 +302,7 @@ function SiparisDurumu() {
             <i className="fa fa-circle" />
           </li>
           <li>
-            <a href="#">Sipariş Durumu</a>
+            <a href="#">Tahsilat Tipi</a>
             <i className="fa fa-circle" />
           </li>
           <li>
@@ -337,16 +337,16 @@ function SiparisDurumu() {
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>Sipariş Durumu</th>
+                        <th>Ad</th>
                       </tr>
                     </thead>
                     <tbody>
                       {
-                      allOrderStatus.map( (data) => (  //foreach gibi, data yerin index'te yazabilirsin
+                      allCollectionType.map( (data) => (  //foreach gibi, data yerin index'te yazabilirsin
                       <> 
                         <tr>
-                         <td>{data.SiparisDurumuId}</td>
-                         <td>{data.SiparisDurumu}</td>
+                         <td>{data.TahsilatTipiId}</td>
+                         <td>{data.TahsilatTipi}</td>
                         </tr>
                          </>
                          )
@@ -375,4 +375,4 @@ function SiparisDurumu() {
   );
 }
 
-export default SiparisDurumu;
+export default TahsilatTipi;
