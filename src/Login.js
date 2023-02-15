@@ -52,8 +52,6 @@ function Login() {
   return (
      
       <>
-
-      
   {/* BEGIN BODY */}
   {/* BEGIN SIDEBAR TOGGLER BUTTON */}
   <div className="menu-toggler sidebar-toggler"></div>
