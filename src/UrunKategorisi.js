@@ -324,7 +324,7 @@ function UrunKategorisi() {
                 <div className="caption">
                   <i className="fa fa-cogs font-green-sharp" />
                   <span className="caption-subject font-green-sharp bold uppercase">
-                    MÜŞTERİ LİSTESİ
+                    ÜRÜN KATEGORİSİ LİSTESİ
                   </span>
                 </div>
                 <div className="tools">

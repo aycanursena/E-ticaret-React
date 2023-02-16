@@ -324,7 +324,7 @@ function SiparisDurumu() {
                 <div className="caption">
                   <i className="fa fa-cogs font-green-sharp" />
                   <span className="caption-subject font-green-sharp bold uppercase">
-                    MÜŞTERİ LİSTESİ
+                    SİPARİŞ DURUMU LİSTESİ
                   </span>
                 </div>
                 <div className="tools">
