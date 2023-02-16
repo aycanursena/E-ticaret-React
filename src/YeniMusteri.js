@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import {json, Link, useNavigate} from "react-router-dom"
+import { data } from 'jquery';
 
 
 function Musteri() {
@@ -13,9 +14,10 @@ function Musteri() {
   const[birthday, setBirthday] = useState();
   const[gender, setGender] = useState();
   const[address, setAddress] = useState();
-  const[city, setCity] = useState();
+  const[city, setCity] = useState(); //yeni kayıt için
 
-  const[allCustomers, setAllCustomers] = useState([]);
+  const[allCity, setAllCities] = useState([]); //dropdown için
+
   const navigate = useNavigate();
 
   const myButtonClick = async () =>
@@ -34,43 +36,43 @@ function Musteri() {
          requestBody
       );
 
-      alert(
-          "Service Request : " + JSON.stringify(requestBody) +
-          "Service Response : " + JSON.stringify(response)
-        );
+      // alert(
+      //     "Service Request : " + JSON.stringify(requestBody) +
+      //     "Service Response : " + JSON.stringify(response)
+      //   );
 
       let donusDegeri = response.data.message;
-      // alert(donusDegeri);
+      alert(donusDegeri);
       navigate('/Musteri', { replace: true });
 
   }
   
   const Temizle = async () => {}
 
-  // useEffect(() => { //sayfa açılır açılmaz çalışır bu kodlar
+  useEffect(() => { //sayfa açılır açılmaz çalışır bu kodlar
   
-  //    //musteriye kontrolsüz bir şekilde geçişi engellemek için
-  //      if (!localStorage.getItem("userName"))
-  //      {
-  //         navigate('/Login', { replace: true });
-  //      }
+     //musteriye kontrolsüz bir şekilde geçişi engellemek için
+       if (!localStorage.getItem("userName"))
+       {
+          navigate('/Login', { replace: true });
+       }
     
 
-  //   const getAllCustomerInfo = async () => {
-  //       let response = await axios.get(
-  //           'https://private-d0072-aycanursenakorkmaz.apiary-mock.com/musteri'
-  //           );
+    const getAllCities = async () => {
+        let response = await axios.get(
+            'https://private-d0072-aycanursenakorkmaz.apiary-mock.com/Sehir'
+            );
     
-  //           console.log("getAllUserInfo" + response.data.MusteriListesi);
+            //console.log("getAllUserInfo" + response.data.SehirListesi);
 
-  //           setAllCustomers(response.data.MusteriListesi);
+            setAllCities(response.data.SehirListesi);
 
-  //   }
+    }
 
-  //   // call the function
-  //   getAllCustomerInfo().catch(console.error);
+    // call the function
+    getAllCities().catch(console.error);
  
-  // }, [])
+  }, [])
 
   return (
   
@@ -538,11 +540,13 @@ function Musteri() {
               </label>
               <div className="col-md-10">
                 <select className="form-control" id="cmbCity" name="cmbCity" onChange={e=>setCity(e.target.value)}>
+                  
                   <option value="">Lütfen seçiniz...</option>
-                  <option value="İstanbul">İstanbul</option>
-                  <option value="Trabzon">Trabzon</option>
-                  <option value="İzmir">İzmir</option>
-                  <option value="Bursa">Bursa</option>
+                  {
+                    allCity.map((data) => (
+                      <option value={data.SehirId}>{data.Ad}</option>
+                    ))
+                  }
                 </select>
                 <div className="form-control-focus"></div>
               </div>
