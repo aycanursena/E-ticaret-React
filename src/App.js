@@ -18,6 +18,8 @@ import Sehir from "./Sehir"
 import TahsilatTipi from "./TahsilatTipi"
 import UrunKategorisi from "./UrunKategorisi";
 
+import YeniMusteri from "./YeniMusteri"
+
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
           <Route path="/Sehir" element={<Sehir />} />
           <Route path="/TahsilatTipi" element={<TahsilatTipi />} />
           <Route path="/UrunKategorisi" element={<UrunKategorisi />} />
+
+          <Route path="/YeniMusteri" element={<YeniMusteri />} />
         </Routes>
     </BrowserRouter>
   )
