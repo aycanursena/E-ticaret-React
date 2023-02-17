@@ -19,6 +19,14 @@ import TahsilatTipi from "./TahsilatTipi"
 import UrunKategorisi from "./UrunKategorisi";
 
 import YeniMusteri from "./YeniMusteri"
+import YeniUrun from "./YeniUrun"
+import YeniSiparis from "./YeniSiparis"
+import YeniTahsilat from "./YeniTahsilat"
+import YeniOdeme from "./YeniOdeme"
+import YeniSiparisDurumu from "./YeniSiparisDurumu"
+import YeniSehir from "./YeniSehir"
+import YeniTahsilatTipi from "./YeniTahsilatTipi"
+import YeniUrunKategorisi from "./YeniUrunKategorisi"
 
 
 function App() {
@@ -39,6 +47,14 @@ function App() {
           <Route path="/UrunKategorisi" element={<UrunKategorisi />} />
 
           <Route path="/YeniMusteri" element={<YeniMusteri />} />
+          <Route path="/YeniUrun" element={<YeniUrun />} />
+          <Route path="/YeniSiparis" element={<YeniSiparis />} />
+          <Route path="/YeniTahsilat" element={<YeniTahsilat />} />
+          <Route path="/YeniOdeme" element={<YeniOdeme />} />
+          <Route path="/YeniSiparisDurumu" element={<YeniSiparisDurumu />} />
+          <Route path="/YeniSehir" element={<YeniSehir />} />
+          <Route path="/YeniTahsilatTipi" element={<YeniTahsilatTipi />} />
+          <Route path="/YeniUrunKategorisi" element={<YeniUrunKategorisi />} />
         </Routes>
     </BrowserRouter>
   )

@@ -467,7 +467,7 @@ function Header() {
                   className="img-circle"
                   src="assets/admin/layout3/img/avatar9.jpg"
                 />
-                <span className="username username-hide-mobile">Nick</span>
+                <span className="username username-hide-mobile">{localStorage.getItem("userName")}</span>
               </a>
               <ul className="dropdown-menu dropdown-menu-default">
                 <li>
@@ -574,7 +574,7 @@ function Header() {
                       <Link to="/Urun">Ürün Listesi </Link>
                     </li>
                     <li className=" ">
-                      <a href="urun_yeni.html">Yeni Ürün Kaydı </a>
+                      <a href="/YeniUrun">Yeni Ürün Kaydı </a>
                     </li>
                   </ul>
                 </li>
@@ -600,7 +600,7 @@ function Header() {
                       <Link to="/Siparis">Sipariş Listesi </Link>
                     </li>
                     <li className=" ">
-                      <a href="siparis_yeni.html">Yeni Sipariş </a>
+                      <a href="/YeniSiparis">Yeni Sipariş </a>
                     </li>
                   </ul>
                 </li>
@@ -614,7 +614,7 @@ function Header() {
                       <Link to="/Tahsilat">Tahsilat Listesi </Link>
                     </li>
                     <li className=" ">
-                      <a href="tahsilat_yeni.html">Yeni Tahsilat </a>
+                      <a href="/YeniTahsilat">Yeni Tahsilat </a>
                     </li>
                   </ul>
                 </li>
@@ -628,7 +628,7 @@ function Header() {
                       <Link to="/Odeme">Ödeme Listesi </Link>
                     </li>
                     <li className=" ">
-                      <a href="odeme_yeni.html">Yeni Ödeme </a>
+                      <a href="/YeniOdeme">Yeni Ödeme </a>
                     </li>
                   </ul>
                 </li>
@@ -654,7 +654,7 @@ function Header() {
                       <Link to="/SiparisDurumu">Sipariş Durumu Listesi </Link>
                     </li>
                     <li className=" ">
-                      <a href="siparisdurumu_yeni.html">Yeni </a>
+                      <a href="/YeniSiparisDurumu">Yeni </a>
                     </li>
                   </ul>
                 </li>
@@ -668,7 +668,7 @@ function Header() {
                       <Link to="/Sehir">Şehir Listesi </Link>
                     </li>
                     <li className=" ">
-                      <a href="sehir_yeni.html">Yeni </a>
+                      <a href="/YeniSehir">Yeni </a>
                     </li>
                   </ul>
                 </li>
@@ -682,7 +682,7 @@ function Header() {
                       <Link to="/TahsilatTipi">Tahsilat Tipi Listesi </Link>
                     </li>
                     <li className=" ">
-                      <a href="tahsilattipi_yeni.html">Yeni </a>
+                      <a href="/yeniTahsilatTipi">Yeni </a>
                     </li>
                   </ul>
                 </li>
@@ -696,7 +696,7 @@ function Header() {
                       <Link to="/UrunKategorisi">Ürün Kategori Listesi </Link>
                     </li>
                     <li className=" ">
-                      <a href="urunkategorisi_yeni.html">Yeni </a>
+                      <a href="/yeniUrunKategorisi">Yeni </a>
                     </li>
                   </ul>
                 </li>
